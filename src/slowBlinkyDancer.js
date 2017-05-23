@@ -1,6 +1,8 @@
 var SlowBlinkyDancer = function(top, left, timeBetweenSteps) {
   // this = Object.create(makeDancer.prototype);
   Dancer.call(this, top, left, timeBetweenSteps);
+  // this.timeBetweenSteps = timeBetweenSteps * 6;
+  this.$node.attr('id', 'slowDance');
   // return this;
 };
 

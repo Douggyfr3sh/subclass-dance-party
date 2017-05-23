@@ -30,4 +30,22 @@ body, a:link, a:visited, a:active{
   border:10px solid red;
   border-radius:10px;
   position:absolute;
+
+
+}
+
+/* Styling to customize dancers */
+
+/*#slowDancer {
+  border:10px solid green;
+  border-radius:10px;
+  position:absolute;
+}*/
+#fastDance {
+  border:10px solid white;
+}
+
+#slowDance {
+  border:10px solid blue;
+  border-radius:0px;
 }
