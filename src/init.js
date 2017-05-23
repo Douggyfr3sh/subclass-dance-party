@@ -16,12 +16,12 @@ $(document).ready(function() {
      * to the stage.
      */
     var dancerMakerFunctionName = $(this).data('dancer-maker-function-name');
-    console.log('dancerMakerFunctionName is: ', dancerMakerFunctionName);
+    // console.log('dancerMakerFunctionName is: ', dancerMakerFunctionName);
           // 'SlowBlinkyDancer', 'FastBlinkyDancer', or 'BlinkyDancer'
     // get the maker function for the kind of dancer we're supposed to make
-    console.log('window[dancerMakerFunctionName] = ', window[dancerMakerFunctionName]);
+    // console.log('window[dancerMakerFunctionName] = ', window[dancerMakerFunctionName]);
     var dancerMakerFunction = window[dancerMakerFunctionName];
-    console.log('dancerMakerFunction is:', dancerMakerFunction);
+    // console.log('dancerMakerFunction is:', dancerMakerFunction);
 
 
     // make a dancer with a random position
@@ -31,7 +31,25 @@ $(document).ready(function() {
       $('body').width() * Math.random(),
       Math.random() * 1000
     );
+    window.dancers.push(dancer);
     console.log('dancer is =', dancer);
     $('body').append(dancer.$node);
+  });
+  $('.lineUp').on('click', function() {
+    console.log('line up');
+    console.log('window.dancers', window.dancers);
+
+    var offset = 0;
+    // console.log('$ body height', $('body').height);
+    var $height = $('body').height() / 2;
+    console.log('$height', $height);
+    for (var i = 0; i < window.dancers.length; i++) {
+      // console.log('window.dancers[i]', window.dancers[i]);
+      // window.dancers[i].$node.top = $height;
+      // window.dancers[i].$node.left = offset;
+      window.dancers[i].lineUp($height, offset);
+      offset += 50;
+
+    }
   });
 });

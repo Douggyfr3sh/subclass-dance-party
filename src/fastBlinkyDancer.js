@@ -9,7 +9,7 @@ var FastBlinkyDancer = function(top, left, timeBetweenSteps) {
   var context = this;
 
   this.$node.mouseover(function () {
-    console.log('mouseover event happened');
+    // console.log('mouseover event happened');
     if (context.canMove) {
       context.canMove = false;
     } else {
@@ -26,8 +26,6 @@ FastBlinkyDancer.prototype.constructor = FastBlinkyDancer;
 FastBlinkyDancer.prototype.step = function() {
   Dancer.prototype.step.call(this);
 
-
-
   // toggle() is a jQuery method to show/hide the <span> tag.
   // See http://api.jquery.com/category/effects/ for this and
   // other effects you can use on a jQuery-wrapped html tag.
@@ -42,11 +40,14 @@ FastBlinkyDancer.prototype.step = function() {
   if (this.canMove) {
     this.$node.css({ top: generateRandomNumber()[0], left: generateRandomNumber()[1] });
   } else {
-    console.log('cannot move!');
+    // console.log('cannot move!');
   }
-  // this.$node.top = this.$node.top - 5;
-  //this.$node.toggle();
 
+};
+
+FastBlinkyDancer.prototype.lineUp = function(top, left) {
+  this.$node.css({top: top, left: left});
+  this.canMove = false;
 };
 
 

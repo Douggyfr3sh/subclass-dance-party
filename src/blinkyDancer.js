@@ -21,12 +21,12 @@ BlinkyDancer.prototype.step = function() {
   if (this.sizeToggle) {
     this.$node.attr('id', 'bigDancer');
     this.sizeToggle = false;
-    console.log('this.$node', this.$node);
+    // console.log('this.$node', this.$node);
 
   } else {
     this.$node.attr('id', 'smallDancer');
     this.sizeToggle = true;
-    console.log('this.$node', this.$node);
+    // console.log('this.$node', this.$node);
   }
 
 };

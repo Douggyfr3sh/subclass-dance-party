@@ -6,7 +6,7 @@ var Dancer = function(top, left, timeBetweenSteps) {
   this.left = left;
   this.timeBetweenSteps = timeBetweenSteps;
   // return this;
-  console.log('this: ', this);
+  // console.log('this: ', this);
   this.step();
   this.setPosition();
 };
@@ -26,6 +26,9 @@ Dancer.prototype.setPosition = function() {
   this.$node.css(styleSettings);
 };
 
+Dancer.prototype.lineUp = function(top, left) {
+  this.$node.css({top: top, left: left});
+};
 
 // // Creates and returns a new dancer object that can step
 // var makeDancer = function(top, left, timeBetweenSteps) {
