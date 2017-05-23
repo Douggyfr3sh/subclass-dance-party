@@ -3,6 +3,7 @@ var SlowBlinkyDancer = function(top, left, timeBetweenSteps) {
   Dancer.call(this, top, left, timeBetweenSteps);
   // this.timeBetweenSteps = timeBetweenSteps * 6;
   this.$node.attr('id', 'slowDance');
+  this.colorCount = 0;
   // return this;
 };
 
@@ -16,7 +17,30 @@ SlowBlinkyDancer.prototype.step = function() {
   // See http://api.jquery.com/category/effects/ for this and
   // other effects you can use on a jQuery-wrapped html tag.
   // console.log('this', this);
+  var getColor = function() {
+    console.log('this.colorCount', this.colorCount);
+
+    var colors = [
+      'slowDanceBlue',
+      'slowDanceYellow',
+      'slowDanceRed',
+      'slowDanceGreen',
+      'slowDanceYellow'   // to make slowDanceRed "show up"
+    ];
+    // return colors[Math.round(Math.random() * (colors.length - 1))];
+    var retColor = colors[this.colorCount];
+    if (this.colorCount === colors.length - 1) {
+      this.colorCount = 0;
+    } else {
+      this.colorCount++;
+    }
+    return retColor;
+  };
+  // console.log('getColor()', getColor());
+  var getColor = getColor.call(this);
   this.$node.toggle();
+  this.$node.attr('id', getColor);
+  console.log('this.$node', this.$node);
 };
 
 

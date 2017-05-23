@@ -3,6 +3,20 @@ var FastBlinkyDancer = function(top, left, timeBetweenSteps) {
   Dancer.call(this, top, left, timeBetweenSteps);
   // this.timeBetweenSteps = timeBetweenSteps;
   this.$node.attr('id', 'fastDance');
+  this.timeBetweenSteps = 2000;
+  this.canMove = true;
+
+  var context = this;
+
+  this.$node.mouseover(function () {
+    console.log('mouseover event happened');
+    if (context.canMove) {
+      context.canMove = false;
+    } else {
+      context.canMove = true;
+    }
+  });
+
   // return this;
 };
 
@@ -12,12 +26,12 @@ FastBlinkyDancer.prototype.constructor = FastBlinkyDancer;
 FastBlinkyDancer.prototype.step = function() {
   Dancer.prototype.step.call(this);
 
+
+
   // toggle() is a jQuery method to show/hide the <span> tag.
   // See http://api.jquery.com/category/effects/ for this and
   // other effects you can use on a jQuery-wrapped html tag.
   // console.log('this', this);
-  console.log('this.$node', this.$node);
-  console.log('this.top', this.top);
   // var currentTop = this.$node.top;
   // var currentLeft = this.$node.left;
   var generateRandomNumber = function() {
@@ -25,11 +39,17 @@ FastBlinkyDancer.prototype.step = function() {
     var width = $('body').width() * Math.random();
     return [height, width];
   };
-  this.$node.css({ top: generateRandomNumber()[0], left: generateRandomNumber()[1] });
+  if (this.canMove) {
+    this.$node.css({ top: generateRandomNumber()[0], left: generateRandomNumber()[1] });
+  } else {
+    console.log('cannot move!');
+  }
   // this.$node.top = this.$node.top - 5;
-  this.$node.toggle();
+  //this.$node.toggle();
 
 };
+
+
 
 
 

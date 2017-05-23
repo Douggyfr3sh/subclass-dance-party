@@ -30,8 +30,6 @@ body, a:link, a:visited, a:active{
   border:10px solid red;
   border-radius:10px;
   position:absolute;
-
-
 }
 
 /* Styling to customize dancers */
@@ -48,4 +46,36 @@ body, a:link, a:visited, a:active{
 #slowDance {
   border:10px solid blue;
   border-radius:0px;
+}
+
+#slowDanceBlue {
+  border:10px solid blue;
+  border-radius:0px;
+}
+
+#slowDanceYellow {
+  border:10px solid yellow;
+  border-radius:0px;
+}
+
+#slowDanceRed {
+  border:10px solid red;
+  border-radius:0px;
+}
+
+#slowDanceGreen {
+  border:10px solid green;
+  border-radius:0px;
+}
+
+#bigDancer {
+  border:20px solid red;
+  border-radius:10px;
+  position:absolute;
+}
+
+#smallDancer {
+  border:5px solid red;
+  border-radius:10px;
+  position:absolute;
 }

@@ -1,6 +1,8 @@
 var BlinkyDancer = function(top, left, timeBetweenSteps) {
   // this = Object.create(makeDancer.prototype);
   Dancer.call(this, top, left, timeBetweenSteps);
+  this.timeBetweenSteps = 2000;
+  this.sizeToggle = false;
   // return this;
 };
 
@@ -14,7 +16,19 @@ BlinkyDancer.prototype.step = function() {
   // See http://api.jquery.com/category/effects/ for this and
   // other effects you can use on a jQuery-wrapped html tag.
   // console.log('this', this);
-  this.$node.toggle();
+  //this.$node.toggle();
+
+  if (this.sizeToggle) {
+    this.$node.attr('id', 'bigDancer');
+    this.sizeToggle = false;
+    console.log('this.$node', this.$node);
+
+  } else {
+    this.$node.attr('id', 'smallDancer');
+    this.sizeToggle = true;
+    console.log('this.$node', this.$node);
+  }
+
 };
 
 
