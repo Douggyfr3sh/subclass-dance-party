@@ -6,6 +6,7 @@ var Dancer = function(top, left, timeBetweenSteps) {
   this.left = left;
   this.timeBetweenSteps = timeBetweenSteps;
   // return this;
+  console.log('this: ', this);
   this.step();
   this.setPosition();
 };

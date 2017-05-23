@@ -19,17 +19,19 @@ $(document).ready(function() {
     console.log('dancerMakerFunctionName is: ', dancerMakerFunctionName);
           // 'SlowBlinkyDancer', 'FastBlinkyDancer', or 'BlinkyDancer'
     // get the maker function for the kind of dancer we're supposed to make
+    console.log('window[dancerMakerFunctionName] = ', window[dancerMakerFunctionName]);
     var dancerMakerFunction = window[dancerMakerFunctionName];
-    console.log('dancerMakerFunction is :', dancerMakerFunction);
+    console.log('dancerMakerFunction is:', dancerMakerFunction);
+
 
     // make a dancer with a random position
 
-    var dancer = dancerMakerFunction(
+    var dancer = new dancerMakerFunction(
       $('body').height() * Math.random(),
       $('body').width() * Math.random(),
       Math.random() * 1000
     );
+    console.log('dancer is =', dancer);
     $('body').append(dancer.$node);
-    window.dancers.push(dancer);
   });
 });
