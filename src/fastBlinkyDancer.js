@@ -5,7 +5,7 @@ var FastBlinkyDancer = function(top, left, timeBetweenSteps) {
   this.$node.attr('id', 'fastDance');
   this.timeBetweenSteps = 2000;
   this.canMove = true;
-
+  this.type = 'rock';
   var context = this;
 
   this.$node.mouseover(function () {
@@ -39,6 +39,7 @@ FastBlinkyDancer.prototype.step = function() {
   };
   if (this.canMove) {
     this.$node.css({ top: generateRandomNumber()[0], left: generateRandomNumber()[1] });
+    this.collisionDetection();
   } else {
     // console.log('cannot move!');
   }
@@ -50,6 +51,39 @@ FastBlinkyDancer.prototype.lineUp = function(top, left) {
   this.canMove = false;
 };
 
+FastBlinkyDancer.prototype.collisionDetection = function() {
+  // Rock: just moved to new position
+  // iterate through array of dancers
+  console.log('this.collisionDetection()');
+
+  for (var i = 0; i < window.dancers.length; i++) {
+    // if element is scissors
+    if (window.dancers[i].type === 'scissors') {
+      // if rock.top is within 10px && scissors.top is within 10px
+      if (this.top > window.dancers[i].top - 150 && this.top < window.dancers[i].top + 150) {
+        if (this.left > window.dancers[i].left - 150 && this.left < window.dancers[i].left + 150) {
+          console.log('collision!');
+          // remove scissors from window.dancers
+          // window.dancers[i].$node.css('display', 'none');
+          console.log('window.dancers[i].$node', window.dancers[i].$node);
+          window.dancers[i].$node.remove();
+          window.dancers.splice(i, 1);
+        }
+      }
+    } else if (window.dancers[i].type === 'paper') {
+      // if rock.top is within 10px && paper.top is within 10px
+      if (this.top > window.dancers[i].top - 150 && this.top < window.dancers[i].top + 150) {
+        if (this.left > window.dancers[i].left - 150 && this.left < window.dancers[i].left + 150) {
+          // remove paper from window.dancers
+          // window.dancers[i].$node.css('display', 'none');
+          this.$node.remove();
+          // window.dancers.splice(i, 1);
+        }
+      }
+    }
+  }
+
+};
 
 
 

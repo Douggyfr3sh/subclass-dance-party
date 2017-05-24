@@ -30,6 +30,8 @@ Dancer.prototype.lineUp = function(top, left) {
   this.$node.css({top: top, left: left});
 };
 
+
+
 // // Creates and returns a new dancer object that can step
 // var makeDancer = function(top, left, timeBetweenSteps) {
 //

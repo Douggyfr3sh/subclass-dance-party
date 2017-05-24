@@ -4,6 +4,7 @@ var SlowBlinkyDancer = function(top, left, timeBetweenSteps) {
   // this.timeBetweenSteps = timeBetweenSteps * 6;
   this.$node.attr('id', 'slowDance');
   this.colorCount = 0;
+  this.type = 'scissors';
   // return this;
 };
 

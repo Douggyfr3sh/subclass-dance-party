@@ -3,6 +3,7 @@ var BlinkyDancer = function(top, left, timeBetweenSteps) {
   Dancer.call(this, top, left, timeBetweenSteps);
   this.timeBetweenSteps = 2000;
   this.sizeToggle = false;
+  this.type = 'paper';
   // return this;
 };
 
