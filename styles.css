@@ -27,7 +27,7 @@ body, a:link, a:visited, a:active{
   background-color: #777;
 }
 .dancer{
-  border:10px solid red;
+  /* border:10px solid red; */
   border-radius:10px;
   position:absolute;
 }
@@ -40,42 +40,43 @@ body, a:link, a:visited, a:active{
   position:absolute;
 }*/
 #fastDance {
-  border:10px solid white;
+  /*rock*/
+  /*border:10px solid white; */
 }
 
 #slowDance {
-  border:10px solid blue;
+/*  border:10px solid blue;*/
   border-radius:0px;
 }
 
 #slowDanceBlue {
-  border:10px solid blue;
+ /* border:10px solid blue;*/
   border-radius:0px;
 }
 
 #slowDanceYellow {
-  border:10px solid yellow;
+/*  border:10px solid yellow;*/
   border-radius:0px;
 }
 
 #slowDanceRed {
-  border:10px solid red;
+  /*border:10px solid red;*/
   border-radius:0px;
 }
 
 #slowDanceGreen {
-  border:10px solid green;
+  /*border:10px solid green;*/
   border-radius:0px;
 }
 
 #bigDancer {
-  border:20px solid red;
+/*  border:20px solid red;*/
   border-radius:10px;
   position:absolute;
 }
 
 #smallDancer {
-  border:5px solid red;
+/*  border:5px solid red;*/
   border-radius:10px;
   position:absolute;
 }

@@ -1,6 +1,7 @@
 var Paper = function(top, left, timeBetweenSteps) {
   // this = Object.create(makeDancer.prototype);
   Dancer.call(this, top, left, timeBetweenSteps);
+  this.$node.html('<span class="dancer"><i class="fa fa-hand-paper-o fa-4x" aria-hidden="true"></i></span>');
   this.timeBetweenSteps = 2000;
   this.sizeToggle = false;
   this.type = 'paper';
@@ -19,16 +20,16 @@ Paper.prototype.step = function() {
   // console.log('this', this);
   //this.$node.toggle();
 
-  if (this.sizeToggle) {
-    this.$node.attr('id', 'bigDancer');
-    this.sizeToggle = false;
-    // console.log('this.$node', this.$node);
+  // if (this.sizeToggle) {
+  //   this.$node.attr('id', 'bigDancer');
+  //   this.sizeToggle = false;
+  //   // console.log('this.$node', this.$node);
 
-  } else {
-    this.$node.attr('id', 'smallDancer');
-    this.sizeToggle = true;
-    // console.log('this.$node', this.$node);
-  }
+  // } else {
+  //   this.$node.attr('id', 'smallDancer');
+  //   this.sizeToggle = true;
+  //   // console.log('this.$node', this.$node);
+  // }
 
 };
 

@@ -2,6 +2,7 @@ var Rock = function(top, left, timeBetweenSteps) {
   // this = Object.create(makeDancer.prototype);
   Dancer.call(this, top, left, timeBetweenSteps);
   // this.timeBetweenSteps = timeBetweenSteps;
+  this.$node = $('<span class="dancer"><i class="fa fa-hand-rock-o fa-pulse fa-4x" aria-hidden="true"></i></span>');
   this.$node.attr('id', 'fastDance');
   this.timeBetweenSteps = 2000;
   this.canMove = true;

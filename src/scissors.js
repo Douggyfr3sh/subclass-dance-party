@@ -2,7 +2,7 @@ var Scissors = function(top, left, timeBetweenSteps) {
   // this = Object.create(makeDancer.prototype);
   Dancer.call(this, top, left, timeBetweenSteps);
   // this.timeBetweenSteps = timeBetweenSteps * 6;
-  this.$node.attr('id', 'slowDance');
+  this.$node.html('<span class="dancer"><i class="fa fa-hand-scissors-o fa-4x" aria-hidden="true"></i></span>');
   this.colorCount = 0;
   this.type = 'scissors';
   // return this;
