@@ -1,6 +1,6 @@
-describe('Scissors', function() {
+describe('scissors', function() {
 
-  var Scissors, clock;
+  var scissors, clock;
   var timeBetweenSteps = 100;
 
   beforeEach(function() {
@@ -14,13 +14,13 @@ describe('Scissors', function() {
 
   it('should have a step function that makes its node blink', function() {
     sinon.spy(scissors.$node, 'toggle');
-    Scissors.step();
+    scissors.step();
     expect(scissors.$node.toggle.called).to.be.true;
   });
 
   describe('dance', function() {
     it('should call step at least once per second', function() {
-      sinon.spy(Scissors, 'step');
+      sinon.spy(scissors, 'step');
       expect(scissors.step.callCount).to.be.equal(0);
       clock.tick(timeBetweenSteps); // ? it seems an extra tick is necessary...
       // clock.tick(timeBetweenSteps);

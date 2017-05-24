@@ -12,10 +12,10 @@ describe('paper', function() {
     expect(paper.$node).to.be.an.instanceof(jQuery);
   });
 
-  it('should have a step function that makes its node blink', function() {
+  it('should have a step function that makes it rotate', function() {
     sinon.spy(paper.$node, 'toggle');
     paper.step();
-    // expect(paper.$node.attr('id')).to.be.('');
+    expect(paper.sizeToggle).to.be.true;
   });
 
   describe('dance', function() {

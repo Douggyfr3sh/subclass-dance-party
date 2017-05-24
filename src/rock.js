@@ -4,7 +4,7 @@ var Rock = function(top, left, timeBetweenSteps) {
   // this.timeBetweenSteps = timeBetweenSteps;
   this.$node = $('<span class="dancer"><i class="fa fa-hand-rock-o fa-pulse fa-4x" aria-hidden="true"></i></span>');
   this.$node.attr('id', 'fastDance');
-  this.timeBetweenSteps = 2000;
+  // this.timeBetweenSteps = 2000;
   this.canMove = true;
   this.type = 'rock';
   var context = this;
@@ -56,7 +56,7 @@ Rock.prototype.collisionDetection = function() {
   // Rock: just moved to new position
   // iterate through array of dancers
   console.log('this.collisionDetection()');
-
+  console.log('window.dancers', window.dancers);
   for (var i = 0; i < window.dancers.length; i++) {
     // if element is scissors
     if (window.dancers[i].type === 'scissors') {

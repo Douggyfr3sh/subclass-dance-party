@@ -12,10 +12,14 @@ describe('rock', function() {
     expect(rock.$node).to.be.an.instanceof(jQuery);
   });
 
-  it('should have a step function that makes its node blink', function() {
-    sinon.spy(rock.$node, 'toggle');
+  it('should have a step function that makes it move', function() {
+    sinon.spy(rock, 'collisionDetection');
+    // var top = rock.$node.top;
+    // var left = rock.$node.left;
     rock.step();
-    expect(rock.$node.toggle.called).to.be.true;
+    expect(rock.collisionDetection.callCount).to.be.equal(1);
+    // expect(left !== rock.$node.left).to.be.true;
+    // expect(top !== rock.$node.top).to.be.true;
   });
 
   describe('dance', function() {
