@@ -1,34 +1,34 @@
-describe('paper', function() {
+describe('Scissors', function() {
 
-  var paper, clock;
+  var Scissors, clock;
   var timeBetweenSteps = 100;
 
   beforeEach(function() {
     clock = sinon.useFakeTimers();
-    paper = new Paper(10, 20, timeBetweenSteps);
+    scissors = new Scissors(10, 20, timeBetweenSteps);
   });
 
   it('should have a jQuery $node object', function() {
-    expect(paper.$node).to.be.an.instanceof(jQuery);
+    expect(scissors.$node).to.be.an.instanceof(jQuery);
   });
 
   it('should have a step function that makes its node blink', function() {
-    sinon.spy(paper.$node, 'toggle');
-    paper.step();
-    expect(paper.$node.toggle.called).to.be.true;
+    sinon.spy(scissors.$node, 'toggle');
+    Scissors.step();
+    expect(scissors.$node.toggle.called).to.be.true;
   });
 
   describe('dance', function() {
     it('should call step at least once per second', function() {
-      sinon.spy(paper, 'step');
-      expect(paper.step.callCount).to.be.equal(0);
+      sinon.spy(Scissors, 'step');
+      expect(scissors.step.callCount).to.be.equal(0);
       clock.tick(timeBetweenSteps); // ? it seems an extra tick is necessary...
       // clock.tick(timeBetweenSteps);
 
-      expect(paper.step.callCount).to.be.equal(1);
+      expect(scissors.step.callCount).to.be.equal(1);
 
       clock.tick(timeBetweenSteps);
-      expect(paper.step.callCount).to.be.equal(2);
+      expect(scissors.step.callCount).to.be.equal(2);
     });
   });
 });
